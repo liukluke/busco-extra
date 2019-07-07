@@ -1,12 +1,12 @@
 <div class="cards">
     <a class="image-card" [style.backgroundImage]="'url(' + image.imageUrl + ')'" *ngFor="let image of images"
         [routerLink]="['/image',image.id]">
-        <ul class="image-card-info">
-            <li>{{image.title}}</li>
-            <li>{{image.likes}}</li>
-            <li>{{image.references}}</li>
-        </ul>
+        <div class="image-card-info">
+            <ul>
+                <li><span>{{image.title}}</span></li>
+                <li class="image-rank"><i class="fas fa-heart"></i><span>{{image.likes}}</span></li>
+                <li class="image-rank"><i class="fas fa-bookmark"></i><span>{{image.references}}</span></li>
+            </ul>
+        </div>
     </a>
 </div>
-
-<!-- [style.background-image]="url('{{image.imageUrl}}')"] -->
