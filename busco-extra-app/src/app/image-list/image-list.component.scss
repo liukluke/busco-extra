@@ -1,14 +1,41 @@
-.image-card {
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-weight: 700;
+
+  .image-card {
     position: relative;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .image-card-info {
-        display: none;
+      visibility: hidden;
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 200px 50px 50px;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 0;
+      color: #ffffff;
+      font-size: 1.3rem;
+      top: 100%;
+      transition: all 0.3s;
+      li {
+        outline: 1px solid red;
+      }
     }
     &:hover {
-        .image-card-info {
-            // position: absolute;
-            display: block;
-        }
+      .image-card-info {
+        visibility: visible;
+        height: 200px;
+        top: 0;
+        opacity: 1;
+        transition: all 0.3s;
+      }
     }
-
+  }
 }
