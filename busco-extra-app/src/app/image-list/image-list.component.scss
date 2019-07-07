@@ -1,0 +1,14 @@
+.image-card {
+    position: relative;
+
+    .image-card-info {
+        display: none;
+    }
+    &:hover {
+        .image-card-info {
+            // position: absolute;
+            display: block;
+        }
+    }
+
+}

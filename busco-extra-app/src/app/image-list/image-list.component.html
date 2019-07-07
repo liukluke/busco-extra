@@ -1,0 +1,10 @@
+<div class="image-card" *ngFor="let image of images" >
+    <a [routerLink]="['/image',image.id]" ><img src={{image.imageUrl}} alt="" /></a>
+    <div class="image-card-info">
+        <ul>
+            <li>{{image.title}}</li>
+            <li>{{image.likes}}</li>
+            <li>{{image.references}}</li>
+        </ul>
+    </div>
+</div>
