@@ -8,13 +8,11 @@ import { ImageService } from '../image-service.service';
 })
 export class ImageListComponent implements OnInit {
   images: Array<Object> = [];
-  // showInfo: boolean;
 
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {
     this.images = this.imageService.getList();
-    // this.showInfo = false;
   }
 
 }

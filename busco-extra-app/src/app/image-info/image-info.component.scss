@@ -1,0 +1,82 @@
+$colors: (
+  backgroundInfo: lighten(#000000, 13%),
+  backgroundInfoTop: lighten(#000000, 15%),
+  lightLink: #6fbbd3,
+  textWhite: #ffffff
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+.image-info-top-container {
+  height: 50vh;
+  background-color: color(backgroundInfo);
+  width: 100%;
+  display: grid;
+  grid-template-rows: 15% 1fr 15%;
+  color: color(textWhite);
+  font-weight: 700;
+
+  a {
+    background-color: color(backgroundInfoTop);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+  }
+
+  .image-info-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 50%;
+    display: grid;
+    justify-self: center;
+  }
+
+  .image-info-list {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 1rem;
+    align-content: center;
+    height: 100%;
+    padding: 0 5%;
+    font-size: 1.3rem;
+
+    .image-info-rank {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      align-content: center;
+      justify-items: center;
+      grid-gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.image-info-bottom-container {
+  display: grid;
+  justify-items: center;
+  padding: 2rem 0;
+
+  .image-info-bottom {
+    width: 50%;
+
+    h2 {
+      font-weight: 700;
+      color: color(lightLink);
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin-top: 1.3rem;
+      font-size: 0.9rem;
+      text-align: justify;
+      line-height: 1.3rem;
+    }
+  }
+}

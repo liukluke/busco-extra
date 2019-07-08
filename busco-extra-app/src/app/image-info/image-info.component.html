@@ -1,5 +1,17 @@
-<h3>
-    This is the page for the contact: {{ image.id }}
-    <label> Name: {{ image.title }} </label>
-</h3>
-<a [routerLink]="['/']"> Back to list </a>
+<div class="image-info-top-container">
+    <a [routerLink]="['/']">Home</a>
+    <div class="image-info-img" [style.backgroundImage]="'url(' + image.imageUrl + ')'"></div>
+    <div>
+        <ul class="image-info-list">
+            <li><span>{{ image.title }}</span></li>
+            <li class="image-info-rank"><i class="fas fa-heart"></i><span>{{image.likes}}</span></li>
+            <li class="image-info-rank"><i class="fas fa-bookmark"></i><span>{{image.references}}</span></li>
+        </ul>
+    </div>
+</div>
+<div class="image-info-bottom-container">
+    <div class="image-info-bottom">
+        <h2>{{image.owner.userName}}</h2>
+        <p>{{image.description}}</p>
+    </div>
+</div>
